@@ -1,4 +1,4 @@
-module github.com/motorheads/catalog_service
+module github.com/motorheads/user_service
 
 go 1.18
 

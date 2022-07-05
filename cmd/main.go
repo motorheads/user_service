@@ -6,14 +6,13 @@ import (
 
 	_ "github.com/lib/pq"
 
-	"github.com/motorheads/catalog_service/config"
-	"github.com/motorheads/catalog_service/routes"
+	"github.com/motorheads/user_service/config"
+	"github.com/motorheads/user_service/routes"
 )
 
 var err error
 
 func main() {
-
 	config.DB, err = sql.Open("postgres", config.DbURL(config.BuildDBConfig()))
 	if err != nil {
 		fmt.Println("Error while connecting to the database")
@@ -23,6 +22,5 @@ func main() {
 	defer config.DB.Close()
 
 	router := routes.New()
-	router.Run(":8080")
-
+	router.Run(":8082")
 }
